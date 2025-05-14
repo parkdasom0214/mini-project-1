@@ -1,54 +1,187 @@
-/* 정렬 */
+/* 기본 리셋 */
 
-body, html {
-  height: 100%;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* 수직 정렬 */
-  align-items: center;       /* 수평 정렬 */
-  height: 100vh;             /* 화면 전체 높이 */
-  text-align: center;        /* 텍스트 중앙 정렬 */
-}
-
-footer {
-  text-align: center;
-  color: white;
-  padding: 20px;
-  font-size: 0.9em;
-}
-
-/* 백그라운드색상 */
 
 body {
-  background-color: #5b2386; /* 보라색 */
-}
-
-/* 폰트적용 */
-
-@font-face {
-  font-family: 'OTEnjoystoriesBA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+  font-family: 'GmarketSansLight';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-p.highlight {
-  font-family: 'OTEnjoystoriesBA', sans-serif;
-  color: #F5DF4D;
+ol, ul {
+  list-style: none;
 }
 
-/* 버튼세부디테일 */
-
-button.count {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* 기본설정 */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    color: white;
+  }
+
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* 수직 정렬 */
+    align-items: center;       /* 수평 정렬 */
+    height: 100vh;             /* 화면 전체 높이 */
+    text-align: center;        /* 텍스트 중앙 정렬 */
+  }
+  
+  footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+    /* 폰트적용 */
+  
+    @font-face {
+      font-family: 'OTEnjoystoriesBA';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GmarketSans';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+      @font-face {
+        font-family: 'GmarketSans';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+      }
+  
+  /* 백그라운드색상 */
+  
+  body {
+    background-color: #5b2386; /* 보라색 */
+  }
+  
+
+  p.highlight {
+    font-family: 'OTEnjoystoriesBA', sans-serif;
+    color: #F5DF4D;
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  .quote-mark {
+    width: 32px;
+    position: absolute;
+    top: 0;
+  }
+
+  .opening {
+    left: -40px;
+  }
+
+  .closing {
+    right: -40px;
+  }
+
+  .rule {
+    font-size: 24px;
+  }
+  
+  .input-container {
+    margin-bottom: 50px;
+  }
+
+  /* 버튼세부디테일 */
+  
+  button.count {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 100px;
+  }
+
+  /* 결과값 세부 디테일 */
+
+
+  .line {
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
+
+  .programming {
+    font-size: 72px;
+    font-weight: 700;
+  }
+  
+  .time {
+    font-size: 72px;
+    font-weight: 700;
+  }
+  
+  /* 버튼그룹 디테일 */
+  .btn-group {
+    display: flex;
+    margin: 0 auto; /* 가운데 정렬 */
+    justify-content: center; /* 버튼을 그룹 내에서 중앙 정렬 */
+    margin-bottom: 50px;
+  }
+
+  /* 개별버튼 스타일 */
+  .btn-go {
+    background-color:#F5DF4D;
+    width: 365px;
+    height: 64px;
+    border-radius: 12px;
+    padding: 20px 50px 20px;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1; /* 여백 최소화 */
+    padding: 0; /* 내부 여백 제거 */
+    
+  }
+
+  .btn-share {
+    background-color: white;
+    width: 193px;
+    height: 64px;
+    border-radius: 12px;
+    padding: 20px 50px 20px;
+    gap: 10px;
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1; /* 여백 최소화 */
+    padding: 0; /* 내부 여백 제거 */
+    
+  }
