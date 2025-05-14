@@ -6,13 +6,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'GmarketSansLight';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 ol, ul {
   list-style: none;
 }
@@ -27,6 +20,7 @@ a {
 body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
     color: white;
   }
 
@@ -36,7 +30,7 @@ body, html {
     flex-direction: column;
     justify-content: center;   /* 수직 정렬 */
     align-items: center;       /* 수평 정렬 */
-    height: 100vh;             /* 화면 전체 높이 */
+    flex: 1;
     text-align: center;        /* 텍스트 중앙 정렬 */
   }
   
@@ -76,13 +70,31 @@ body, html {
         font-weight: 700;
         font-style: normal;
       }
+
+      body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'GmarketSans';
+  background-color: #5b2386; /* 보라색 */
+  min-height: 100vh;
+}
   
-  /* 백그라운드색상 */
-  
-  body {
-    background-color: #5b2386; /* 보라색 */
+  .wrapper {
+  flex: 1; /* 남은 공간을 모두 채움 (푸터 밀어내기 역할) */
+  padding: 20px;
   }
-  
+
+  footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+footer p {
+  margin-top: 20px;
+}
 
   p.highlight {
     font-family: 'OTEnjoystoriesBA', sans-serif;
@@ -91,31 +103,56 @@ body, html {
     margin-bottom: 50px;
   }
 
-  h2 {
+  .quote-text {
     font-size: 18px;
     margin-bottom: 50px;
   }
 
-  .quote-mark {
-    width: 32px;
-    position: absolute;
-    top: 0;
-  }
+.quote-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
 
-  .opening {
-    left: -40px;
-  }
+.quote-mark {
+  width: 36px;
+  height: 33px;
+  display: block;
+  position: relative; 
+  object-fit: contain;
+  bottom: 25px;
+}
 
-  .closing {
-    right: -40px;
-  }
+/* 입력창 세부 */
 
   .rule {
     font-size: 24px;
+    font-weight: 500;
   }
   
   .input-container {
     margin-bottom: 50px;
+  }
+
+  .input-container {
+    line-height: 4;
+  }
+
+input::placeholder {
+  color: #999;
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+  .input-container input {
+    width: 228px;
+    padding: 16px 40px;
+    border-radius: 8px;
+    gap: 10px;
+    background: #FFF;
+    border: none;
   }
 
   /* 버튼세부디테일 */
@@ -131,7 +168,6 @@ body, html {
   }
 
   /* 결과값 세부 디테일 */
-
 
   .line {
     font-size: 24px;
@@ -154,6 +190,7 @@ body, html {
     margin: 0 auto; /* 가운데 정렬 */
     justify-content: center; /* 버튼을 그룹 내에서 중앙 정렬 */
     margin-bottom: 50px;
+    gap: 16px;
   }
 
   /* 개별버튼 스타일 */
@@ -165,9 +202,11 @@ body, html {
     padding: 20px 50px 20px;
     gap: 10px;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1; /* 여백 최소화 */
-    padding: 0; /* 내부 여백 제거 */
+    color: #5b2386;
+    font-family: 'GmarketSans', sans-serif;
+
     
   }
 
@@ -177,11 +216,52 @@ body, html {
     height: 64px;
     border-radius: 12px;
     padding: 20px 50px 20px;
-    gap: 10px;
-    font-family: 'GmarketSansMedium', sans-serif;
     font-size: 24px;
     font-weight: 500;
     line-height: 1; /* 여백 최소화 */
-    padding: 0; /* 내부 여백 제거 */
-    
+    color: #5b2386;
+    font-weight: 700;
+    border: none;
   }
+
+
+  /* === 모달 스타일 === */
+
+  .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* 체크박스가 체크됐을 때 모달 표시 */
+#modal-toggle:checked + .modal {
+  display: flex;
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  color: #333;
+  text-align: center;
+  font-family: 'GmarketSans', sans-serif;
+}
+
+/* 닫기 버튼 */
+.close-modal {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #5b2386;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
