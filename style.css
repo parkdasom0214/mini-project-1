@@ -1,0 +1,54 @@
+/* 정렬 */
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 수직 정렬 */
+  align-items: center;       /* 수평 정렬 */
+  height: 100vh;             /* 화면 전체 높이 */
+  text-align: center;        /* 텍스트 중앙 정렬 */
+}
+
+footer {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* 백그라운드색상 */
+
+body {
+  background-color: #5b2386; /* 보라색 */
+}
+
+/* 폰트적용 */
+
+@font-face {
+  font-family: 'OTEnjoystoriesBA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+p.highlight {
+  font-family: 'OTEnjoystoriesBA', sans-serif;
+  color: #F5DF4D;
+}
+
+/* 버튼세부디테일 */
+
+button.count {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+
