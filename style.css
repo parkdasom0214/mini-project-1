@@ -20,10 +20,29 @@ a {
 body, html {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0;
     color: white;
+
+
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
   }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+}
+  
   
   .wrapper {
     display: flex;
@@ -99,12 +118,12 @@ footer p {
   p.highlight {
     font-family: 'OTEnjoystoriesBA', sans-serif;
     color: #F5DF4D;
-    font-size: 36px;
+    font-size: clamp(15px, 6vw, 36px);
     margin-bottom: 50px;
   }
 
   .quote-text {
-    font-size: 18px;
+    font-size: clamp(10px, 3vw, 18px);
     margin-bottom: 50px;
     line-height: 2;
   }
@@ -168,22 +187,66 @@ input::placeholder {
     margin-bottom: 100px;
   }
 
+.btn-count-pc {
+  display: block;
+}
+
+.btn-count-mo {
+  display: none;
+}
+
+/* 모바일일 때 반대로 */
+@media screen and (max-width: 768px) {
+  .btn-count-pc {
+    display: none;
+  }
+
+  .btn-count-mo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* 가운데 정렬 */
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .finger-icon {
+    top: auto;             /* 기존 top 값 무시 */
+    bottom: 10px;          /* 이미지 아래쪽으로 이동 */
+    right: 50%;            /* 가운데 정렬 */
+    transform: translateX(50%);
+    width: 10%;           /* 모바일 크기 조절 */
+  }
+}
+
   /* 결과값 세부 디테일 */
 
   .line {
-    font-size: 24px;
+    font-size: clamp(15px, 3vw, 50px);
     margin-bottom: 100px;
   }
 
   .programming {
-    font-size: 72px;
+    font-size: clamp(20px, 14vw, 72px);
     font-weight: 700;
   }
+
+      @media screen and (max-width: 768px) {
+  .programming {
+    font-size: 60px;
+  }
+}
   
   .time {
-    font-size: 72px;
+    font-size: clamp(20px, 14vw, 72px);
     font-weight: 700;
   }
+
+    @media screen and (max-width: 768px) {
+  .time {
+    font-size: 60px;
+  }
+}
   
   /* 버튼그룹 디테일 */
   .btn-group {
@@ -197,33 +260,44 @@ input::placeholder {
   /* 개별버튼 스타일 */
   .btn-go {
     background-color:#F5DF4D;
-    width: 365px;
+    width: clamp(203px, 40vw, 365px);
     height: 64px;
     border-radius: 12px;
     padding: 20px 50px 20px;
     gap: 10px;
-    font-size: 24px;
+    font-size: clamp(14px, 3vw, 24px);
     font-weight: 700;
     line-height: 1; /* 여백 최소화 */
     color: #5b2386;
     font-family: 'GmarketSans', sans-serif;
-
     
   }
 
+  @media screen and (btn-go: 768px) {
+  .btn-share {
+    padding: 0px;
+  }
+}
+
   .btn-share {
     background-color: white;
-    width: 193px;
+    width: clamp(102px, 10vw, 193px);
     height: 64px;
     border-radius: 12px;
-    padding: 20px 50px 20px;
-    font-size: 24px;
+    padding: 20px 30px 20px;
+    align-items: center;
+    font-size: clamp(14px, 3vw, 24px);
     font-weight: 500;
-    line-height: 1; /* 여백 최소화 */
     color: #5b2386;
     font-weight: 700;
     border: none;
   }
+
+  @media screen and (max-width: 768px) {
+  .btn-share {
+    padding: 16px;
+  }
+}
 
 
   /* === 모달 스타일 === */
@@ -248,6 +322,9 @@ input::placeholder {
 
 /* 모달 콘텐츠 */
 .modal-content {
+  position: relative;
+  width: clamp(330px, 80vw, 800px);
+  height: clamp(500px, 90vw, 816px);
   background: white;
   padding: 30px 40px;
   border-radius: 12px;
@@ -256,13 +333,42 @@ input::placeholder {
   font-family: 'GmarketSans', sans-serif;
 }
 
+.modal-font {
+  font-family: 'OTEnjoystoriesBA', sans-serif;
+  color: #5b2386;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;        /* 세로 방향 정렬 */
+  justify-content: center;       /* 세로 가운데 */
+  align-items: center;           /* 가로 가운데 */
+}
+
+.modal .modal-content .modal-font .cheer-text {
+  font-size: clamp(64px, 3vw, 36px);
+}
+
+.modal .modal-content .modal-font .dream-text {
+  font-size: 36px;
+}
+
+.madal-img {
+  width: clamp(240px, 50vw, 438px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
 /* 닫기 버튼 */
 .close-modal {
-  display: inline-block;
-  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
   padding: 10px 20px;
-  background-color: #5b2386;
-  color: white;
+  background-color: #F5DF4D;
+  color: #5b2386;
+  font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -280,5 +386,8 @@ br.mobile-break {
   }
   
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c65e699 (모달작업 마무리, 반응형 보강)
