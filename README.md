@@ -45,9 +45,14 @@
 
 ## 🖥️ 실행 방법
 
-1. 프로젝트 링크 첨부
+1. 프로젝트 실행방법
+   
+      ```bash
+   git clone https://parkdasom0214.github.io/mini-project-1//.git
+   
+2. 프로젝트 링크 첨부
 
-   https://parkdasom0214.github.io/mini-project-1/
+    https://parkdasom0214.github.io/mini-project-1/
 
 ## 📂 파일 구조
 
